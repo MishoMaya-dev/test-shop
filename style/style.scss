@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+html, body {
+  height: 100%;
+  font-family: 'PT Sans', sans-serif;
+  background: #FFFFFF;
+}
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .3s;
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+#__nuxt, #__layout {
+  height: 100%;
+}
+
+.cart-fade-enter-active,
+.cart-fade-leave-active {
+  transition: all .4s;
+
+  & .cart__panel {
+    transition: all .4s;
+  }
+}
+.cart-fade-enter,
+.cart-fade-leave-to {
+  opacity: 0;
+
+  & .cart__panel {
+    transform: translateX(400px);
+  }
+}
+
+.cart-list-enter-active,
+.cart-list-leave-active {
+  transition: all 0.5s;
+}
+.cart-list-enter,
+.cart-list-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
